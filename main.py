@@ -1,4 +1,4 @@
-import pyrebase
+import pyrebase 
 
 config = {
     'apiKey': "AIzaSyC4HW9KqmWWZwtOLMgF6Wrx7Vm75d9_HIs",
@@ -13,16 +13,3 @@ config = {
 
 fire = pyrebase.initialize_app(config)
 conexao = fire.database()
-
-games = {
-  'id' : '004',
-  'name': 'Jogo 4',
-  'price': 109.90,
-  'description': 'Descricao 4',
-}
-conexao.child('vendas').push(games)
-valores = conexao.child('vendas').get()
-for linhas in valores.each():
-    print(linhas.val())
-    print(linhas.key())
-
